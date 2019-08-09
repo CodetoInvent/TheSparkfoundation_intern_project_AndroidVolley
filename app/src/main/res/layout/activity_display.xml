@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Displayactivity"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:layout_gravity="top|bottom|start|end|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:gravity="center"
+        android:background="@drawable/main_screen_header"
+        app:elevation="10dp">
+
+        <RelativeLayout
+            android:gravity="center"
+            android:id="@+id/Rel_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_pic_header"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/white"
+            android:clickable="true"
+
+            android:src="@drawable/default_profile" />
+
+
+        <TextView
+            android:id="@+id/profile_name_header"
+            android:layout_below="@id/profile_pic_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="My Name"
+            android:textColor="#ffffff"
+            android:textSize="23sp"
+             />
+
+        <TextView
+            android:id="@+id/profile_edu_header"
+            android:layout_below="@+id/profile_name_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:padding="2dp"
+            android:text="My Education"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+             />
+
+            <Button
+                android:id="@+id/btnClose"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/profile_edu_header"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="4dp"
+                android:background="@drawable/setting_icon_"
+
+                />
+
+
+        </RelativeLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_below="@id/appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        app:tabBackground="@color/white"
+        app:tabIndicatorColor="#f62459"
+        app:tabTextColor="#000000"
+        android:elevation="10dp"
+        app:tabSelectedTextColor="#DF1248">
+    </com.google.android.material.tabs.TabLayout>
+
+
+    <RelativeLayout
+        android:layout_below="@+id/tabs"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/viewpager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+    </androidx.viewpager.widget.ViewPager>
+    </RelativeLayout>
+
+</RelativeLayout>
